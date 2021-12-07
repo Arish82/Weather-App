@@ -1,0 +1,150 @@
+:root{
+    --a1: #5cc8fa; 
+    --b1: #75e0fe; 
+    --c1: #59dffd; 
+    --d1: #5acbf9;
+
+    --a2: #f2b07b; 
+    --b2: #fdd384; 
+    --c2: #f9e177; 
+    --d2: #ffbe94;
+
+    --a3: rgba(70, 69, 69, 0.962); 
+    --b3: rgba(116, 115, 115, 0.956); 
+    --c3: rgba(170, 169, 169, 0.956); 
+    --d3: rgba(80, 80, 80, 0.962); 
+    
+    --a4: rgba(17, 161, 228, 0.956); 
+    --b4: rgba(134, 175, 221, 0.956); 
+    --c4: rgba(189, 218, 255, 0.956); 
+    --d4: rgba(98, 179, 255, 0.956); 
+
+    --a5: #5cc8fa; 
+    --b5: #75e0fe; 
+    --c5: #59dffd; 
+    --d5: #5acbf9;
+
+    --a6: #734ffe; 
+    --b6: #aa96ff; 
+    --c6: #aa96ff; 
+    --d6: #8f73ff;
+
+    --a7: rgba(88,213,212,1); 
+    --b7: rgba(108,233,232,1); 
+    --c7: rgba(110,250,230,1); 
+    --d7: rgba(114,239,238,1);
+}
+
+:root{
+    --divs: 1.7;
+}
+.boxss{
+    /* perspective: 10px; */
+    border-radius: 20px;
+    width: 187.5px;
+    /* height: 1000px; */
+    width: 275px;
+    height: 514px;
+    height: calc(896px / var(--divs));
+    width: calc(414px / var(--divs));
+    background: linear-gradient(200deg, 
+                var(--c7) 20%, 
+                var(--d7) 80%);
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset
+    ,rgba(0, 0, 0, 0.45) 0px 39px 27px -20px;
+    transform: rotateY(-14deg);
+    /* transform-style: preserve-3d; */
+    /* transform: rotate3d(0, 1, 0, 6 60deg); */
+}
+.navba{
+    height: 12.3809%;
+    font-weight: 900;
+    display: flex;
+    /* align-items: flex-end; */
+    justify-content: center;
+}
+.fa-map-marker-alt{
+    font-size: 1em;
+    padding: 0 8px;
+}
+.location{
+    font-size: 1.2em;
+    width: 63%;
+    /* padding: 0 6px; */
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none;
+}
+.fa-calendar-alt{
+    /* padding: 0 6px; */
+    font-size: 1.3em;
+}
+.content{
+    height: 56.19%;
+}
+.slide{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.img-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48%;
+}
+.img{
+    height: 100%;
+}
+.detail{
+    height: 52%;
+    /* color: #3a3e66; */
+    /* color: white; */
+}
+.weather-name{
+    text-align: center;
+    font-size: 15px;
+    font-weight: bolder;
+}
+.temp{
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.temp > span{
+    font-size: 20px;
+}
+.winds{
+    text-align: center;
+    font-size: 13px;
+}
+.fa-wind{
+    padding: 0 3px;
+}
+.fa-tint{
+    padding: 0 3px 0px 20px;
+}
+.footer{
+    height: 31.4291%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.time{
+    font-size: 1.7em;
+}
+@media (max-width: 420px) {
+   .box{
+       width: 100%;
+       height: 90%;
+   } 
+}

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weather App - Check Weather</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/index.css">
+        <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Varela Round', sans-serif;
+            color: white;
+            color: #3a3e66;
+        }
+        :root{
+            --a1: #5cc8fa; 
+            --b1: #75e0fe; 
+            --c1: #59dffd; 
+            --d1: #5acbf9;
+
+            --a2: #f2b07b; 
+            --b2: #fdd384; 
+            --c2: #f9e177; 
+            --d2: #ffbe94;
+
+            --a3: rgba(70, 69, 69, 0.962); 
+            --b3: rgba(116, 115, 115, 0.956); 
+            --c3: rgba(170, 169, 169, 0.956); 
+            --d3: rgba(80, 80, 80, 0.962); 
+            
+            --a4: rgba(17, 161, 228, 0.956); 
+            --b4: rgba(134, 175, 221, 0.956); 
+            --c4: rgba(189, 218, 255, 0.956); 
+            --d4: rgba(98, 179, 255, 0.956); 
+
+            --a5: #5cc8fa; 
+            --b5: #75e0fe; 
+            --c5: #59dffd; 
+            --d5: #5acbf9;
+
+            --a6: #734ffe; 
+            --b6: #aa96ff; 
+            --c6: #aa96ff; 
+            --d6: #8f73ff;
+
+            --a7: rgba(88,213,212,1); 
+            --b7: rgba(108,233,232,1); 
+            --c7: rgba(110,250,230,1); 
+            --d7: rgba(114,239,238,1);
+        }
+        .w-1{
+            background: linear-gradient(200deg, 
+                        var(--c1) 20%, 
+                        var(--d1) 80%);
+        }
+        .w-2{
+            background: linear-gradient(200deg, 
+                        var(--c2) 20%, 
+                        var(--d2) 80%);
+        }
+        .w-3{
+            background: linear-gradient(200deg, 
+                        var(--c3) 20%, 
+                        var(--d3) 80%);
+        }
+        .w-4{
+            background: linear-gradient(200deg, 
+                        var(--c4) 20%, 
+                        var(--d4) 80%);
+        }
+        .w-5{
+            background: linear-gradient(200deg, 
+                        var(--c5) 20%, 
+                        var(--d5) 80%);
+        }
+        .w-6{
+            background: linear-gradient(200deg, 
+                        var(--c6) 20%, 
+                        var(--d6) 80%);
+        }
+        .w-7{
+            background: linear-gradient(200deg, 
+                        var(--c7) 20%, 
+                        var(--d7) 80%);
+        }
+        .w-8{
+            background: linear-gradient(200deg, 
+                        var(--c1) 20%, 
+                        var(--d1) 80%);
+        }
+        .w-9{
+            background: linear-gradient(200deg, 
+                        var(--c7) 20%, 
+                        var(--d7) 80%);
+        }
+        .w-container{
+            width: 100vw;
+            height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* background: linear-gradient(135deg, 
+                        var(--a1) 0%, 
+                        var(--b1) 88%); */
+        }
+        .w-box{
+            border-radius: 20px;
+            width: 350px;
+            height: 600px;
+            /*background: linear-gradient(200deg, 
+                        var(--c1) 20%, 
+                        var(--d1) 80%);*/
+            box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
+            rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset, 
+            rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset
+            ,rgba(0, 0, 0, 0.45) 0px 39px 27px -20px;
+        }
+        .w-navbar{
+            height: 12.3809%;
+            font-weight: 900;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+        .ww{
+            font-size: 1.3em;
+            padding: 0 8px;
+        }
+        .w-location{
+            font-size: 1em;
+            width: 63%;
+            padding: 0 6px;
+            -webkit-touch-callout: none; /* iOS Safari */
+              -webkit-user-select: none; /* Safari */
+               -khtml-user-select: none; /* Konqueror HTML */
+                 -moz-user-select: none; /* Old versions of Firefox */
+                  -ms-user-select: none; /* Internet Explorer/Edge */
+                      user-select: none;
+        }
+        .ee{
+            padding: 0 6px;
+            font-size: 1.3em;
+        }
+        .w-content{
+            height: 56.19%;
+        }
+        .w-slide{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .w-img-box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 48%;
+        }
+        .w-img{
+            height: 100%;
+        }
+        .w-detail{
+            height: 52%;
+            /* color: #3a3e66; */
+            /* color: white; */
+        }
+        .w-weather-name{
+            text-align: center;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .w-temp{
+            font-size: 4em;
+            text-align: center;
+            height: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .w-temp > span{
+            font-size: 20px;
+        }
+        .w-winds{
+            text-align: center;
+            font-size: 13px;
+        }
+        .fa-wind{
+            padding: 0 3px;
+        }
+        .fa-tint{
+            padding: 0 3px 0px 20px;
+        }
+        .w-footer{
+            height: 31.4291%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .w-time{
+            font-size: 3em;
+        }
+        .w-search{
+            background-color: transparent;
+            border: none;
+            font-weight: bold;
+            border-bottom: 0.1px solid grey;
+        }
+        .w-search:focus{
+            outline: none;
+        }
+        @media (max-width: 420px) {
+           .w-box{
+               width: 100%;
+               height: 90%;
+           } 
+        }
+        .w-wave{
+            position: absolute;
+            z-index: -1;
+            bottom: 0;
+            
+        }
+        .ww-3{
+            color: white !important;
+        }
+        .ww-1, .ww-2, .ww-4, .ww-5, .ww-6, .ww-7, .ww-8, .ww-9{
+            color: #3a3e66 !important;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/d3c7399aa7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="/"><em class="fas fa-cloud" style="color: #0d6efd;"></em> Weather App</a>
+        <button class="navbar-toggler" id="toggleBtn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <em class="fas fa-bars text-primary"></em>
+        </button>
+        <div class=" collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="menu bg-primary">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item active mx-4">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item mx-4">
+                    <a class="nav-link" href="/weather">Weather</a>
+                </li>
+                <li class="nav-item mx-4">
+                    <a class="nav-link" href="/about">About Us</a>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="w-container">
+        <div class="w-box w-{{img}}">
+            <nav class="w-navbar">
+                <em class="fas fa-map-marker-alt ww ww-{{img}}" id="mark"></em>
+                <span class="w-location ww-{{img}}" id="location">{{location}}</span>
+                <!-- <input type="search" name="" id="" onkeypress="final(e)" class="location search"> -->
+                <em class="far fa-calendar-alt ee ww-{{img}}"></em>
+            </nav>
+            <section class="w-content">
+                <div class="w-slide">
+                    <div class="w-img-box">
+                        <img class="w-img" src="Assests/{{img}}.png" alt="" srcset="">
+                    </div>
+                    <div class="w-detail">
+                        <div class="w-weather-name ww-{{img}}">
+                            {{tempStatus}}
+                        </div>
+                        <h1 class="w-temp ww-{{img}}">
+                            {{temp}}&deg;C
+                        </h1>
+                        <div class="w-winds ww-{{img}}">
+                            <em class="fas fa-wind ww-{{img}}"></em> {{speed}}m/s
+                            <em class="fas fa-tint ww-{{img}}"></em> {{humidity}}%
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer class="w-footer">
+                <h1 class="w-time ww-{{img}}" id="time">
+                    10:30 pm
+                </h1>
+                <h1 id="date" class=" ww-{{img}}">Sun, Nov 28</h1>
+            </footer>
+        </div>
+    </div>
+
+    <svg class="w-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#0099ff" fill-opacity="1" d="M0,128L48,112C96,96,192,64,288,80C384,96,480,160,576,170.7C672,181,768,139,864,122.7C960,107,1056,117,1152,112C1248,107,1344,85,1392,74.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+    </svg>
+</body>
+    <script>
+        let Location=document.getElementById("location");
+        let tt=Location.innerText;
+        const run=()=>{
+            Location.innerHTML=`
+                <input type="text" name="" autocomplete="off" id="inpLoc" class="w-location w-search">`;
+            let inpLoc=document.getElementById("inpLoc");
+            inpLoc.focus();
+            inpLoc.addEventListener("keyup", (e)=>{
+                if(e.Handled)
+                    return;
+                
+                if(e.key==="Enter"){
+                    //console.log(tt);
+                    // let b=inpLoc.value.trim();
+                    let b="";
+                    let c=inpLoc.value.trim().split(" ");
+                    c.forEach((e,i) => {
+                        b +=e[0].toUpperCase()+e.substring(1)+" ";
+                    });
+                    //console.log(b);
+                    Location.innerText=(inpLoc.value.trim()!=="")?b:(tt);
+                    tt=Location.innerText;
+
+                    fetch(`http://localhost:8000/data?city=${b}`)
+                    .then((res)=>{
+                        return res.json();
+                    })
+                    .then((data)=>{
+                        //console.log(JSON.stringify(data));
+                        window.location.reload(true);
+                    });
+                }
+                e.Handled = true;
+            });
+        }
+        Location.addEventListener("dblclick",run);
+        document.getElementById("mark").addEventListener("click",run);
+
+
+        
+        
+        showTime();
+        function showTime(){
+            let date=new Date();
+            let a=date.toDateString();
+            let b=date.toLocaleTimeString();
+            let time=document.getElementById("time");
+            let Dates=document.getElementById("date");
+            Dates.innerText=`${a.substring(0,a.indexOf(" "))},${a.substring(a.indexOf(" "),a.lastIndexOf(" "))}`;
+            time.innerText=b.substring(0,b.lastIndexOf(" ")-3) + b.substring(b.lastIndexOf(" "));
+            setTimeout(() => {
+                showTime();
+            }, 30000);
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>    
+</html>
