@@ -3,6 +3,7 @@ const path=require("path");
 const app=express();
 const hbs=require("hbs");
 var requests = require('requests');
+const port = process.env.PORT || 8000;
 
 // staic page
 const staticPath=path.join(__dirname, "../public");
@@ -92,7 +93,7 @@ app.get("*",(req,res)=>{
 });
 
 // listening
-app.listen(8000, (err)=>{
+app.listen(port, (err)=>{
     if(err)
         console.log("err ",err);
     console.log("listening at port 8000");
