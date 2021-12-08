@@ -11,7 +11,7 @@ app.use(express.static(staticPath));
 
 // view engine
 app.set("view engine", 'hbs');
-app.set("views","../templates/views");
+app.set("views","./templates/views");
 
 // partials
 hbs.registerPartials(path.join(__dirname, "../templates/partials"))
@@ -28,15 +28,15 @@ app.get("/data",(req,res)=>{
     res.json(datas);
     res.end();
 });
-let jsondata={
-    "200-232": 1,
-    "300-321;500-531": 5,
-    "800": 2,
-    "801": 7,
-    "802": 4,
-    "803-804": 3,
-    "600-622": 8
-}
+// let jsondata={
+//     "200-232": 1,
+//     "300-321;500-531": 5,
+//     "800": 2,
+//     "801": 7,
+//     "802": 4,
+//     "803-804": 3,
+//     "600-622": 8
+// }
 const mapping=(id, time)=>{
     if(id>199 && id< 233)
         return 1;
