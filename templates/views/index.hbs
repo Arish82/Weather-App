@@ -321,7 +321,7 @@
                     Location.innerText=(inpLoc.value.trim()!=="")?b:(tt);
                     tt=Location.innerText;
 
-                    fetch(`http://localhost:8000/data?city=${b}`)
+                    fetch(`https://arish82-weather-app.herokuapp.com/data?city=${b}`)
                     .then((res)=>{
                         return res.json();
                     })
