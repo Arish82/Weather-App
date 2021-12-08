@@ -96,8 +96,10 @@ body{
     bottom: 0;
 }
 @media (max-width: 990px) {
+    body{
+        position: fixed;
+    }
     .wave{
-        /* width: 100vw; */
         height: 330px;
         transform: translateX(-300px);
         
