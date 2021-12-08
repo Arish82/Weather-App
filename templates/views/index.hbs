@@ -130,8 +130,10 @@
         .ww{
             font-size: 1.3em;
             padding: 0 8px;
+            cursor: pointer;
         }
         .w-location{
+            cursor: pointer;
             font-size: 1em;
             width: 63%;
             padding: 0 6px;
@@ -141,6 +143,15 @@
                  -moz-user-select: none; /* Old versions of Firefox */
                   -ms-user-select: none; /* Internet Explorer/Edge */
                       user-select: none;
+        }
+        .msg{
+            font-size: 13px;
+            color: white;
+            border-radius: 5px;
+            padding: 2px 5px;
+            position: absolute;
+            background-color: rgba(5, 5, 5, 0.801);
+            display: none;
         }
         .ee{
             padding: 0 6px;
@@ -236,7 +247,6 @@
     <script src="https://kit.fontawesome.com/d3c7399aa7.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
     <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="/"><em class="fas fa-cloud" style="color: #0d6efd;"></em> Weather App</a>
         <button class="navbar-toggler" id="toggleBtn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -265,6 +275,9 @@
                 <span class="w-location ww-{{img}}" id="location">{{location}}</span>
                 <!-- <input type="search" name="" id="" onkeypress="final(e)" class="location search"> -->
                 <em class="far fa-calendar-alt ee ww-{{img}}"></em>
+                <div class="msg">
+                    double click
+                </div>
             </nav>
             <section class="w-content">
                 <div class="w-slide">
@@ -334,7 +347,7 @@
                 e.Handled = true;
             });
         }
-        Location.addEventListener("dblclick",run);
+        Location.addEventListener("click",run);
         document.getElementById("mark").addEventListener("click",run);
 
 

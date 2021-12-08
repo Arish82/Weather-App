@@ -96,9 +96,7 @@ body{
     bottom: 0;
 }
 @media (max-width: 990px) {
-    body{
-        position: fixed;
-    }
+    
     .wave{
         height: 330px;
         transform: translateX(-300px);
@@ -170,4 +168,9 @@ body{
     /* background: linear-gradient(135deg, 
                 var(--a1) 0%, 
                 var(--b1) 88%); */
+}
+@media (max-width: 580px) {
+    body{
+        position: fixed;
+    }
 }
