@@ -22,7 +22,22 @@ app.get("/about",(req,res)=>{
 });
 
 let city="Pune";
-let datas;
+let datas={
+    name: "NA",
+    sys: {
+        country: "NA"
+    },
+    main: {
+        temp: 0
+    },
+    weather: [{
+        main: "NA",
+        id: 800
+    }],
+    wind: {
+        speed : 0
+    }
+};
 app.get("/data",(req,res)=>{
     city=req.query.city;
     res.json(datas);
@@ -64,7 +79,7 @@ const mapping=(id, time)=>{
 
 // weather 
 app.get("/weather",(req,res)=>{
-    requests(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=1067473358f17658b391e391d00bbd3f`)
+    requests(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=c54de9945100d45bfd5df7ee86a49d67`)
     .on('data', function (chunk) {
         let s=JSON.parse(chunk);
         if(s.cod === 200){
