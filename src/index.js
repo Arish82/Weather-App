@@ -58,10 +58,12 @@ const mapping=(id, time)=>{
     if(id===800){
         let d=new Date();
         let hrs=parseInt(d.toTimeString().substr(0,2));
-        if((hrs>=0 && hrs <=6) || (hrs>=18 && hrs <=24))
-            return 6;
-        if((hrs>=6 && hrs <=18))
+        if((hrs>=0 && hrs <=6) || (hrs>=18 && hrs <=24)){
             return 2;
+        }
+        if((hrs>=6 && hrs <=18)){
+            return 6;
+        }
     }
     if(id===801)
         return 7;
